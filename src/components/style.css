@@ -1,0 +1,69 @@
+@media only screen and (max-width: 768px) {
+  .header {
+    display: flex;
+    width: 100%;
+    background: #054ea1;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .banner {
+    display: flex;
+    background-color: #43aadd;
+    justify-content: space-between;
+    height: 20rem;
+    align-items: center;
+    padding: 0 2rem;
+  }
+
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    background-color: #e1e1e1;
+  }
+
+  .text-banner {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .card {
+    display: flex;
+    padding: 2rem;
+    background-color: #054ea1;
+    height: 10rem;
+    border: 0.2px solid #43aadd;
+  }
+
+  .card:nth-child(2),
+  .card:nth-child(3n) {
+    background-color: #122471;
+  }
+
+  .text {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  .metaDetails {
+    background: #43aadd;
+    border: 2px solid #054ea1;
+  }
+
+  .metaDetails > ul {
+    list-style: none;
+    font-size: 1rem;
+    line-height: 4rem;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  .details-page {
+    text-align: center;
+  }
+}
