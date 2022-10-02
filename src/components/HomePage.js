@@ -31,7 +31,7 @@ const HomePage = ({ handleId }) => {
           <RiFundsBoxFill fontSize={200} />
         </div>
         <div className="text-banner">
-          Total Funds Company Count is
+          Total Funding Groups are:
           <br />
           {imfData.length}
         </div>
@@ -45,20 +45,20 @@ const HomePage = ({ handleId }) => {
             return '';
           })
             .map((item) => (
-              <div key={item.schemeCode} className="card">
-                <div className="text">
-                  {item.schemeName}
-                </div>
-                <div className="details">
-                  <NavLink
-                    to="/funding"
-                    id={item.schemeCode}
-                    onClick={handleId}
-                  >
+              <NavLink
+                to="/funding"
+                onClick={handleId}
+                key={item.schemeCode}
+              >
+                <div id={item.schemeCode} className="card">
+                  <div className="text">
+                    {item.schemeName}
+                  </div>
+                  <div className="details" id={item.schemeCode}>
                     <GrFormNextLink fontSize={50} />
-                  </NavLink>
+                  </div>
                 </div>
-              </div>
+              </NavLink>
             ))
         }
       </div>
@@ -72,6 +72,8 @@ const HomePage = ({ handleId }) => {
   );
 };
 
-HomePage.propTypes = { handleId: PropTypes.func.isRequired };
+HomePage.propTypes = {
+  handleId: PropTypes.func.isRequired,
+};
 
 export default HomePage;

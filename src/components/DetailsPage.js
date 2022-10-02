@@ -1,31 +1,30 @@
 import { NavLink } from 'react-router-dom';
 import { GrFormPreviousLink } from 'react-icons/gr';
-import { useDispatch, useSelector } from 'react-redux';
-import { useEffect } from 'react';
-import PropTypes from 'prop-types';
-import { getIndividualDataAction } from '../redux/individual/individual';
+import { useSelector } from 'react-redux';
 
-const DetailsPage = ({ id }) => {
+const DetailsPage = () => {
   const individualData = useSelector((state) => state.getIndividualDataReducer);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getIndividualDataAction(id));
-  });
 
   return (
     <>
       <header className="header">
         <NavLink to="/funding"><GrFormPreviousLink fontSize={50} /></NavLink>
-        {individualData.meta.scheme_code}
+        <div className="text">full details date and nav</div>
       </header>
-      <div className="details-page">
-        <h1>Details Page</h1>
-      </div>
+
+      {
+        individualData.data.map((item) => (
+          <div id={item.date} key={item.date} className="card">
+            <div className="text">
+              {item.date}
+              <br />
+              {item.nav}
+            </div>
+          </div>
+        ))
+      }
     </>
   );
 };
-
-DetailsPage.propTypes = { id: PropTypes.string.isRequired };
 
 export default DetailsPage;

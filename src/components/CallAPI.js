@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { GrFormNextLink, GrFormPreviousLink } from 'react-icons/gr';
-import { RiFundsBoxFill } from 'react-icons/ri';
+import { FaPiggyBank } from 'react-icons/fa';
 import { getIndividualDataAction } from '../redux/individual/individual';
 import Header from './Header';
 import './style.css';
@@ -14,7 +14,7 @@ const CallAPI = ({ id }) => {
 
   useEffect(() => {
     dispatch(getIndividualDataAction(id));
-  });
+  }, [dispatch, id]);
 
   return (
     <>
@@ -22,38 +22,45 @@ const CallAPI = ({ id }) => {
         <header className="header">
           <NavLink to="/"><GrFormPreviousLink fontSize={50} /></NavLink>
           <Header />
-          {individualData.meta.scheme_code}
           <NavLink to="/funding/details"><GrFormNextLink fontSize={50} /></NavLink>
         </header>
-        <div className="banner">
+        <div className="banner-mp">
           <div>
-            <RiFundsBoxFill fontSize={200} />
+            <FaPiggyBank fontSize={200} />
           </div>
           <div className="text-banner">
             Viewing Details for Scheme Code:
             <br />
             {individualData.meta.scheme_code}
+            <br />
+            <br />
             Available Data:
             <br />
             {individualData.data.length}
+            <br />
+            <br />
+            Click Next Button On Top for Details
           </div>
         </div>
-        <div key={individualData.meta.scheme_code} className="card">
+        <div key={individualData.meta.scheme_code} className="card-mp">
           <div className="text">
+            FUND_HOUSE:
+            <br />
             {individualData.meta.fund_house}
-            FUND_HOUSE
           </div>
         </div>
-        <div key={individualData.meta.scheme_code} className="card">
+        <div key={individualData.meta.scheme_code} className="card-mp">
           <div className="text">
-            {individualData.meta.scheme_code}
-            SCHEME_NAME
+            Scheme_Name:
+            <br />
+            {individualData.meta.scheme_name}
           </div>
         </div>
-        <div key={individualData.meta.scheme_code} className="card">
+        <div key={individualData.meta.scheme_code} className="card-mp">
           <div className="text">
-            {individualData.meta.scheme_type}
-            SCHEME_TYPE
+            Scheme_Category:
+            <br />
+            {individualData.meta.scheme_category}
           </div>
         </div>
       </section>

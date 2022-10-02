@@ -7,7 +7,9 @@ import DetailsPage from './DetailsPage';
 const Router = () => {
   const [id, setId] = useState('');
 
-  const handleId = (e) => setId(e.target.id);
+  const handleId = (e) => {
+    setId(e.target.parentElement.id);
+  };
 
   return (
     <>
