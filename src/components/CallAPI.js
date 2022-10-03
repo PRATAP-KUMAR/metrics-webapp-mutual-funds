@@ -26,40 +26,40 @@ const CallAPI = ({ id }) => {
         </header>
         <div className="banner-mp">
           <div>
-            <FaPiggyBank fontSize={200} />
+            <FaPiggyBank fontSize={200} color="#054ea1" />
           </div>
           <div className="text-banner">
-            Viewing Details for Scheme Code:
-            <br />
-            {individualData.meta.scheme_code}
-            <br />
-            <br />
             Available Data:
             <br />
             {individualData.data.length}
-            <br />
-            <br />
-            Click Next Button On Top for Details
           </div>
+        </div>
+        <div className="stats">
+          SCHEME CODE -&nbsp;
+          {individualData.meta.scheme_code}
+          &nbsp;DETAILS
         </div>
         <div key={individualData.meta.scheme_code} className="card-mp">
           <div className="text">
-            FUND_HOUSE:
-            <br />
+            Fund House:&nbsp;
             {individualData.meta.fund_house}
           </div>
         </div>
         <div key={individualData.meta.scheme_code} className="card-mp">
           <div className="text">
-            Scheme_Name:
-            <br />
+            Scheme Name:&nbsp;
             {individualData.meta.scheme_name}
           </div>
         </div>
         <div key={individualData.meta.scheme_code} className="card-mp">
           <div className="text">
-            Scheme_Category:
-            <br />
+            Scheme Type:&nbsp;
+            {individualData.meta.scheme_type}
+          </div>
+        </div>
+        <div key={individualData.meta.scheme_code} className="card-mp">
+          <div className="text">
+            Scheme Category:&nbsp;
             {individualData.meta.scheme_category}
           </div>
         </div>
