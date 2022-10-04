@@ -10,6 +10,10 @@ Select an API that provides numeric data about a topic and then build the webapp
 
 - React & Redux
 
+## Netlify Link
+
+- [Netlify Link](https://metrics-app-mutual-funds-panabaka.netlify.app/)
+
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.
