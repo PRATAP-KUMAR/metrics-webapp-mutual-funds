@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { RiFundsBoxFill } from 'react-icons/ri';
-import { GrFormNextLink } from 'react-icons/gr';
+import { FcNext } from 'react-icons/fc';
 import { getDataAction } from '../redux/imf/imf';
 import getExternalFunction from '../externalFunction';
 import Header from './Header';
@@ -37,26 +37,24 @@ const HomePage = ({ handleId }) => {
     <section>
       <Header />
       <div className="banner">
-        <div className="row-1">
-          <div>
-            <RiFundsBoxFill fontSize={200} color="#054ea1" />
-          </div>
-          <div className="text-banner">
-            FUNDING GROUPS:
-            <br />
-            {imfData.length}
-          </div>
+        <div className="logo">
+          <RiFundsBoxFill fontSize={200} color="#054ea1" />
         </div>
-        <div className="row-2">
-          <input
-            id="input"
-            className="search-box"
-            name="input"
-            type="text"
-            placeholder="Search..."
-            onChange={handleInputChange}
-          />
+        <div className="text-banner">
+          FUNDING GROUPS:
+          <br />
+          {imfData.length}
         </div>
+      </div>
+      <div className="search-bar">
+        <input
+          id="input"
+          className="search-box"
+          name="input"
+          type="text"
+          placeholder="Search By Typing Funding Company Name..."
+          onChange={handleInputChange}
+        />
       </div>
       <div className="stats">
         TOTAL STATS
@@ -73,7 +71,7 @@ const HomePage = ({ handleId }) => {
               >
                 <div className="card">
                   <div className="next-arrow">
-                    <GrFormNextLink fontSize={50} />
+                    <FcNext fontSize={30} />
                   </div>
                   <div className="card-group1" id={item.schemeCode}>
                     <div className="text">

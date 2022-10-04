@@ -9,45 +9,60 @@
 
   .header {
     display: flex;
-    width: 100%;
+    gap: 5rem;
+    height: 4rem;
     background: #054ea1;
     text-align: center;
     font-weight: bold;
     font-size: 1rem;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     color: #fff;
+    padding-left: 1rem;
+  }
+
+  .icons {
+    display: flex;
+    gap: 2rem;
+    font-size: 1.5rem;
+    justify-content: flex-end;
+    padding-right: 1rem;
   }
 
   .banner {
     background-color: #43aadd;
+    display: flex;
     justify-content: center;
     height: 20rem;
     align-items: center;
     padding: 0 2rem;
   }
 
-  .row-1 {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 2rem;
-  }
-
-  .row-2 {
-    margin-top: 1rem;
+  .logo,
+  .text-banner {
     display: flex;
     justify-content: center;
+    flex: 0.5;
+  }
+
+  .search-bar {
+    display: flex;
+    border: 2px solid #122471;
   }
 
   .search-box {
-    width: 50%;
+    width: 100%;
+    text-align: center;
     font-size: 1rem;
+    margin: 0 auto;
     height: 2rem;
-    border: 2px solid #122471;
     background-color: #054ea1;
-    border-radius: 0.5rem;
     color: #fff;
+    border: none;
+  }
+
+  .search-bar > ::placeholder {
+    color: #c2bbbb;
   }
 
   .stats {
@@ -74,6 +89,7 @@
     font-size: 1.5rem;
     font-weight: bold;
     color: #fff;
+    text-align: left;
   }
 
   .container {
@@ -158,14 +174,12 @@
   }
 
   th {
-    font-size: 2rem;
     background-color: #054ea1;
   }
 
   tr {
     background-color: #054ea1;
     text-align: center;
-    font-size: 1.5rem;
   }
 
   tr:nth-child(even) {

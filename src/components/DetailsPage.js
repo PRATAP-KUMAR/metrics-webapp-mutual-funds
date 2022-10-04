@@ -1,5 +1,5 @@
 import { NavLink } from 'react-router-dom';
-import { GrFormPreviousLink } from 'react-icons/gr';
+import { FcPrevious } from 'react-icons/fc';
 import { useSelector } from 'react-redux';
 import { FaPiggyBank } from 'react-icons/fa';
 import Header from './Header';
@@ -10,10 +10,10 @@ const DetailsPage = () => {
   return (
     <>
       <header className="header">
-        <NavLink to="/funding"><GrFormPreviousLink fontSize={50} /></NavLink>
+        <NavLink to="/funding"><FcPrevious fontSize={30} /></NavLink>
         <Header />
       </header>
-      <div className="banner-mp">
+      <div className="banner">
         <div>
           <FaPiggyBank fontSize={200} color="#054ea1" />
         </div>
@@ -26,7 +26,7 @@ const DetailsPage = () => {
       <table className="table">
         <tr>
           <th>Date</th>
-          <th>Nav</th>
+          <th>Net Asset Value</th>
         </tr>
         {
           individualData.data.map((item) => (
