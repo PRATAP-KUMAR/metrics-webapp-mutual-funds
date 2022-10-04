@@ -6,6 +6,10 @@ This React Capstone Project is about building a Mobile Web Application to check 
 
 Select an API that provides numeric data about a topic and then build the webapp around it.
 
+## Link to Live Demo
+
+[Loom Link](https://www.loom.com/share/3ae06abf18ee4831acdcc5610741caeb)
+
 ## Built With
 
 - React & Redux
