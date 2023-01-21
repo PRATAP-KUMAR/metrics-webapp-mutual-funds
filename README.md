@@ -35,7 +35,7 @@ cd metrics-webapp-mutual-funds
 npm start
 ````
 
-## Authors
+## Author
 
 👤 **PRATAP PANABAKA**
 
