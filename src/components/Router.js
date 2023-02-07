@@ -8,7 +8,7 @@ const Router = () => {
   const [id, setId] = useState('');
 
   const handleId = (e) => {
-    setId(e.target.parentElement.id);
+    setId(e.target.closest('.nav-link-card').id);
   };
 
   return (

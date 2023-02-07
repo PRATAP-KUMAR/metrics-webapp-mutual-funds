@@ -1,21 +1,23 @@
-import { FaMicrophone } from 'react-icons/fa';
-import { FiSettings } from 'react-icons/fi';
 import './style.css';
 
-const Header = () => (
-  <>
-    <header className="topbar">
+const Header = (props) => {
+  const obj = props;
+  const { bkArrow, frArrow } = obj;
+  return (
+    <header>
       <div className="header">
+        <div>
+          {bkArrow}
+        </div>
         <h1>
           Indian Mutual Funds
         </h1>
-        <div className="icons">
-          <FaMicrophone />
-          <FiSettings />
+        <div>
+          {frArrow}
         </div>
       </div>
     </header>
-  </>
-);
+  );
+};
 
 export default Header;
