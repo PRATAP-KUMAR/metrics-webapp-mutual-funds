@@ -3,36 +3,38 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RiFundsBoxFill } from 'react-icons/ri';
 import { FcNext } from 'react-icons/fc';
 import { NavLink } from 'react-router-dom';
-import PropTypes from 'prop-types';
+import { debounce } from 'lodash';
 import Header from './Header';
 import { getDataAction } from '../redux/imf/imf';
 
-const HomePage = ({ handleId }) => {
+const HomePage = (props) => {
+  const obj = props;
+  const { handleId } = obj;
   const imfData = useSelector((state) => state.imfReducer);
   const dispatch = useDispatch();
 
   const [value, setValue] = useState('');
-  const [array, setArray] = useState(imfData.slice(0, 100));
+  // const [array, setArray] = useState(imfData.slice(0, 100));
 
-  const handleInputChange = (e) => {
+  const handleInputChange = debounce((e) => {
     setValue(e.target.value);
-  };
+  }, 1000);
 
   useEffect(() => {
-    if (array.length === 0) {
+    if (imfData.length === 0) {
       dispatch(getDataAction());
     }
 
-    if (value !== '') {
-      setArray(imfData.slice(0, 2000));
-    }
+    // if (value !== '') {
+    //   setArray(imfData.slice(0, 2000));
+    // }
 
-    return () => {
-      setArray(imfData.slice(0, 100));
-    };
-  }, [dispatch, imfData, value, array.length]);
+    // return () => {
+    //   setArray(imfData.slice(0, 100));
+    // };
+  }, [dispatch, imfData, value, imfData.length]);
 
-  if (array.length === 0) {
+  if (imfData.length === 0) {
     return (
       <h1 className="loading">
         INDIAN MUTUAL FUNDS
@@ -72,7 +74,7 @@ const HomePage = ({ handleId }) => {
         </div>
         <div className="container">
           {
-            array
+            imfData
               .filter((item) => item.schemeName.toLowerCase().startsWith(value.toLowerCase()))
               .map((item) => (
                 <NavLink
@@ -92,10 +94,6 @@ const HomePage = ({ handleId }) => {
       </section>
     </>
   );
-};
-
-HomePage.propTypes = {
-  handleId: PropTypes.func.isRequired,
 };
 
 export default HomePage;
