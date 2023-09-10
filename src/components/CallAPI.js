@@ -1,14 +1,15 @@
 import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import { FcPrevious, FcNext } from 'react-icons/fc';
 import { FaPiggyBank } from 'react-icons/fa';
 import { getIndividualDataAction } from '../redux/individual/individual';
 import Header from './Header';
 import './style.css';
 
-const CallAPI = ({ id }) => {
+const CallAPI = (props) => {
+  const obj = props;
+  const { id } = obj;
   const individualData = useSelector((state) => state.getIndividualDataReducer);
   const dispatch = useDispatch();
 
@@ -86,17 +87,9 @@ const CallAPI = ({ id }) => {
             {individualData.meta.scheme_category}
           </div>
         </div>
-        <div className="footer">
-          your footer here
-        </div>
-
       </section>
     </>
   );
-};
-
-CallAPI.propTypes = {
-  id: PropTypes.string.isRequired,
 };
 
 export default CallAPI;
