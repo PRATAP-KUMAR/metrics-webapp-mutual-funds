@@ -31,7 +31,7 @@
   color: #fff;
 }
 
-.header>div {
+.header > div {
   flex: calc(1 / 3);
   align-items: center;
 }
@@ -58,7 +58,7 @@
   flex-direction: column;
 }
 
-.text-banner>p {
+.text-banner > p {
   color: #122471;
   font-size: 2rem;
 }
@@ -83,7 +83,7 @@ input:focus {
   outline: none;
 }
 
-.search-bar> ::placeholder {
+.search-bar > ::placeholder {
   color: #c2bbbb;
   align-items: center;
 }
