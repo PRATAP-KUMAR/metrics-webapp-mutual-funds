@@ -1,5 +1,7 @@
 import axios from 'axios';
 
+import { shuffle } from 'lodash';
+
 const GET_DATA = 'GET_DATA';
 const API = 'https://api.mfapi.in/mf';
 
@@ -17,7 +19,9 @@ const imfReducer = (state = initialState, action) => {
 export const getDataAction = () => (dispatch) => {
   axios.get(API).then((response) => {
     const { data } = response;
-    dispatch({ type: GET_DATA, payload: data });
+    const shuffledData = shuffle(data).slice(0, 1000);
+
+    dispatch({ type: GET_DATA, payload: shuffledData });
   });
 };
 

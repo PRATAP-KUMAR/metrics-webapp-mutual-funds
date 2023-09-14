@@ -36,11 +36,13 @@ const HomePage = (props) => {
 
   if (imfData.length === 0) {
     return (
-      <h1 className="loading">
-        INDIAN MUTUAL FUNDS
-        PAGE IS LOADING...
-        PLEASE WAIT
-      </h1>
+      <div className="container-hv">
+        <div className="hv">
+          INDIAN MUTUAL FUNDS
+          PAGE IS LOADING...
+          PLEASE WAIT
+        </div>
+      </div>
     );
   }
 
