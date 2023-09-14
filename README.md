@@ -6,9 +6,24 @@ This React Capstone Project is about building a Mobile Web Application to check 
 
 Select an API that provides numeric data about a topic and then build the webapp around it.
 
+## Link to Live Demo
+
+[Loom Link](https://www.loom.com/share/3ae06abf18ee4831acdcc5610741caeb)
+
 ## Built With
 
 - React & Redux
+
+## Netlify Link
+
+- [Netlify Link](https://metrics-app-mutual-funds-panabaka.netlify.app/)
+
+## Preview of the Mutual Funds App
+![Metrics-App-Pic-1](https://user-images.githubusercontent.com/40719899/193776623-1a123f7c-95e8-4fd6-a762-f22b36b04835.png)
+![Metrics-App-Pic-2](https://user-images.githubusercontent.com/40719899/193776631-c84ec4df-fea0-4d68-ab37-86748c261081.png)
+![Metrics-App-Pic-3](https://user-images.githubusercontent.com/40719899/193776635-33e63ca3-4146-453e-a1be-7679b34e7f09.png)
+
+
 
 ## Getting Started
 
@@ -20,7 +35,7 @@ cd metrics-webapp-mutual-funds
 npm start
 ````
 
-## Authors
+## Author
 
 👤 **PRATAP PANABAKA**
 
@@ -41,7 +56,7 @@ Give a ⭐️ if you like this project!
 
 ## Acknowledgments
 
-- Microverse Curriculum
+- Original Design is by the Author [Nelson Sakwa on Behance](https://www.behance.net/sakwadesignstudio)
 
 ## 📝 License
 
